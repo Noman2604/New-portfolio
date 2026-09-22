@@ -43,10 +43,10 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs text-muted ">
+            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs text-muted">
               <span>Next.js 15</span>
               <span>TypeScript</span>
-              <span>MongoDB / Mongoose</span>
+              <span>MongoDB</span>
               <span>Tailwind CSS</span>
             </div>
           </div>

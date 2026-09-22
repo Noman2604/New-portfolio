@@ -2,33 +2,7 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Reveal from "./Reveal";
-
-const timeline = [
-  {
-    period: "May 2026 - June 2026 ",
-    role: "Full-Stack Developer",
-    org: "Saiket Systems",
-    body: "Designing and building end-to-end apps with a focus on UX, reusable architecture, and clean handoff points.",
-    details:
-      "Working with Next.js, React, TypeScript, MongoDB, Tailwind CSS, and Shadcn UI. Built applications like AptiCore, Expense Tracker, Library Management System, and AI-based projects.",
-  },
-  {
-    period: "August 2024 - September 2024",
-    role: "Frontend Developer Intern",
-    org: "OctaNet Service Pvt.Ltd",
-    body: "Shipped polished interfaces, improved responsiveness, and translated ideas into production-ready screens.",
-    details:
-      "Worked on frontend development, reusable components, responsive layouts, and modern UI implementation using React.js and frontend technologies.",
-  },
-  {
-    period: "2023 - 2026",
-    role: "Graduation Completed",
-    org: "B.Sc IT",
-    body: "CGPI: 8.23 / 10.",
-    details:
-      "Completed Bachelor of Science in Information Technology with focus on software development, databases, web technologies, and application development.",
-  },
-];
+import { about } from "@/data/content";
 
 export default function Experience() {
   const [active, setActive] = useState<number | null>(null);
@@ -42,22 +16,15 @@ export default function Experience() {
               Experience
             </h2>
 
-            <span className="tag-pill hidden sm:inline-flex ">
-              Timeline
-            </span>
+            <span className="tag-pill hidden sm:inline-flex">Timeline</span>
           </div>
 
           <div className="space-y-0 divide-y divide-accent border-t border-b border-accent">
-            {timeline.map((t, index) => (
-              <div
-                key={t.role + t.period}
-                className="py-6"
-              >
+            {about.experience.map((t, index) => (
+              <div key={t.role + t.period} className="py-6">
                 <button
-                  onClick={() =>
-                    setActive(active === index ? null : index)
-                  }
-                  className="grid w-full gap-2 text-left sm:grid-cols-[160px_1fr] sm:gap-8"
+                  onClick={() => setActive(active === index ? null : index)}
+                  className="grid w-full gap-2 text-left sm:grid-cols-[180px_1fr] sm:gap-8"
                 >
                   <span className="font-mono text-xs text-accent">
                     {t.period}
@@ -68,12 +35,12 @@ export default function Experience() {
                       <h3 className="font-display text-base font-semibold text-accent">
                         {t.role}{" "}
                         <span className="font-body font-normal text-black">
-                          · {t.org}
+                          · {t.company}
                         </span>
                       </h3>
 
                       <p className="mt-1.5 text-sm leading-relaxed text-black">
-                        {t.body}
+                        {t.description}
                       </p>
                     </div>
 
@@ -93,8 +60,8 @@ export default function Experience() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="sm:ml-[160px] text-sm leading-relaxed text-black">
-                    {t.details}
+                  <div className="sm:ml-[180px] text-sm leading-relaxed text-muted">
+                    {t.description}
                   </div>
                 </div>
               </div>

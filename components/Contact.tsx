@@ -1,26 +1,28 @@
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import Reveal from "./Reveal";
+import { contact } from "@/data/content";
 
 const links = [
   {
     label: "Email",
-    value: "Noman Patel",
-    href: "mailto:nomanpatel07059@gmail.com",
+    value: contact.email,
+    href: `mailto:${contact.email}`,
     icon: Mail,
   },
   {
     label: "GitHub",
-    value: "Noman Patel",
-    href: "https://github.com/Noman2604",
+    value: "GitHub",
+    href: contact.github,
     icon: Github,
   },
   {
     label: "LinkedIn",
-    value: "Noman Patel",
-    href: "https://linkedin.com/in/noman-patel",
+    value: "LinkedIn",
+    href: contact.linkedin,
     icon: Linkedin,
   },
 ];
+
 
 export default function Contact() {
   return (
